@@ -90,36 +90,39 @@ def parse_options() -> int:
     except ValueError:
         parse_options()
     return option
+def main():
+    option = None
+    while option != 6:
+        option = parse_options()
 
-option = None
-while option != 6:
-    option = parse_options()
+        if option == 1:
+            cuit = input("Ingrese el cuit\n")
+            client_name = input("Ingrese el nombre del cliente\n")
+            client_address = input("Ingrese la direccion del cliente\n")
+            client_phone = parse_phone(input("Ingrese el telefono del cliente\n"))
+            client_email = input("Ingrese el email del cliente\n")
+            while not validate_email(client_email):
+                client_email = input("Ingrese un email válido\n")
+            client_preferred = confirm("Ingrese si el cliente es preferente [Si/No]\n")
+            client_data = Client(client_name,client_address,client_phone,client_email,client_preferred)
+            create_client(cuit, client_data)
+        
+        elif option == 2:
+            cuit = input("Ingrese el cuit\n")
+            delete_client(cuit)
+        
+        elif option == 3:
+            cuit = input("Ingrese el cuit\n")
+            show_client(cuit)
 
-    if option == 1:
-        cuit = input("Ingrese el cuit\n")
-        client_name = input("Ingrese el nombre del cliente\n")
-        client_address = input("Ingrese la direccion del cliente\n")
-        client_phone = parse_phone(input("Ingrese el telefono del cliente\n"))
-        client_email = input("Ingrese el email del cliente\n")
-        while not validate_email(client_email):
-            client_email = input("Ingrese un email válido\n")
-        client_preferred = confirm("Ingrese si el cliente es preferente [Si/No]\n")
-        client_data = Client(client_name,client_address,client_phone,client_email,client_preferred)
-        create_client(cuit, client_data)
-    
-    elif option == 2:
-        cuit = input("Ingrese el cuit\n")
-        delete_client(cuit)
-    
-    elif option == 3:
-        cuit = input("Ingrese el cuit\n")
-        show_client(cuit)
+        elif option == 4:
+            show_all()
 
-    elif option == 4:
-        show_all()
+        elif option == 5:
+            show_preferred_clients()
 
-    elif option == 5:
-        show_preferred_clients()
+        elif option == 6:
+            print("Programa terminado")
 
-    elif option == 6:
-        print("Programa terminado")
+if __name__ == "__main__":
+    main()
