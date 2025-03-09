@@ -1,6 +1,6 @@
 #Pedirle la edad al usuario y responder si es divisible por 3
 
-def es_divisible(edad:int, numero:int) -> None:
+def is_divisible(edad:int, numero:int) -> None:
     if edad % numero == 0:
         print(f"La edad {edad} es divisible por {numero}")
         return
@@ -12,4 +12,4 @@ while not edad_usuario:
         edad_usuario = int(input("Ingrese la edad del usuario\n"))
     except ValueError:
         edad_usuario = None
-es_divisible(int(edad_usuario),3)
+is_divisible(int(edad_usuario),3)
