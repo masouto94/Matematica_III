@@ -65,7 +65,7 @@ def show_preferred_clients():
     )
 
 def parse_phone(phone_string:str) -> int:
-    parsed_phone = re.sub(r"\W|[A-Za-z]","",phone_string)
+    parsed_phone = re.sub(r"\D","",phone_string)
     return int(parsed_phone)
 
 def validate_email(email_string:str) -> bool:
