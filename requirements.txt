@@ -1,4 +1,5 @@
 asttokens==3.0.0
+colorama==0.4.6
 comm==0.2.2
 debugpy==1.8.13
 decorator==5.2.1
@@ -25,6 +26,7 @@ pure_eval==0.2.3
 Pygments==2.19.1
 python-dateutil==2.9.0.post0
 pytz==2025.1
+pywin32==310
 pyzmq==26.3.0
 six==1.17.0
 stack-data==0.6.3
@@ -34,3 +36,4 @@ traitlets==5.14.3
 typing_extensions==4.12.2
 tzdata==2025.1
 wcwidth==0.2.13
+xlrd==2.0.1
